@@ -90,6 +90,7 @@ class TaskListViewController: UITableViewController {
 extension TaskListViewController: NewTaskViewControllerDelegate {
     func saveTask(taskName task: Task) {
         tasks.append(task)
-        tableView.reloadData()
+        let index = IndexPath(row: tasks.count - 1, section: 0)
+        tableView.insertRows(at: [index], with: .automatic)
     }
 }
